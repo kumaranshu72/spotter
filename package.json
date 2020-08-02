@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/kumaranshu72/spotter/issues"
   },
-  "homepage": "https://github.com/kumaranshu72/spotter#readme"
+  "homepage": "https://github.com/kumaranshu72/spotter#readme",
+  "dependencies": {
+    "express": "4.17.1"
+  }
 }

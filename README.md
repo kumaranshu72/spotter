@@ -13,7 +13,10 @@ Spotter is backend service for tiyaka.
 
 # Things to add
 <ul>
-  <li>project scripts</li>
   <li>swagger</li>
+  <li>dockerlization</li>
+  <li>project scripts</li>
+  <li> configure logger</li>
+  <li>response handler</li>
   <li>automated test cases</li>
 </ul>

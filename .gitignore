@@ -1,3 +1,9 @@
-node_modules
-dist
+log/*
 lib
+node_modules
+.DS_Store
+dist
+npm-debug.log
+.idea
+.nyc_output
+coverage

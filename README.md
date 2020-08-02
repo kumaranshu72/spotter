@@ -9,5 +9,13 @@ Spotter is backend service for tiyaka.
     npm config set save=true
     npm config set save-exact=true
   </code>
+</ul>
 
+# Things to add
+<ul>
+  <li>Typescript</li>
+  <li>babel</li>
+  <li>tslint</li>
+  <li>swagger</li>
+  <li>automated test cases</li>
 </ul>

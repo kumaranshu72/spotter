@@ -10,7 +10,41 @@
     "quotemark": [true, "single"],
     "semicolon": [true, "never"],
     "no-duplicate-imports": [true],
-    "arrow-parens": [true, "ban-single-arg-parens"]
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "no-any": [true],
+    "no-empty": true,
+    "no-eval": true,
+    "space-before-blocks": [2, "always"],
+    "brace-style": [1, "stroustrup"],
+    "semi": [1, "never"],
+    "quotes": [1, "single"],
+    "func-names": [0],
+    "arrow-body-style": [1, "as-needed", { "requireReturnForObjectLiteral": false }],
+    "array-bracket-spacing": [2, "never"],
+    "object-curly-spacing": [2, "always"],
+    "object-curly-newline": [
+      "off",
+      {
+        "ObjectExpression": {
+          "minProperties": 0,
+          "multiline": true
+        },
+        "ObjectPattern": {
+          "minProperties": 0,
+          "multiline": true
+        }
+      }
+    ],
+    "object-property-newline": [
+      "error",
+      {
+        "allowMultiplePropertiesPerLine": true
+      }
+    ],
+    "no-use-before-define": [2, { "functions": false, "classes": true }],
+    "max-len": [2, 120, { "ignoreTemplateLiterals": true  }],
+    "camelcase": [0],
+    "no-unused-vars": [2, { "args": "none" }]
   },
   "rulesDirectory": []
 }

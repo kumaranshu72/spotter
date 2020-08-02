@@ -7,6 +7,8 @@ Spotter is backend service for tiyaka.
   <li> Confirue the npm setting as below. </li>
   <code>
     npm config set save=true
+  </code>
+  <code>
     npm config set save-exact=true
   </code>
 </ul>

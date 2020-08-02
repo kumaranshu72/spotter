@@ -13,8 +13,7 @@ Spotter is backend service for tiyaka.
 
 # Things to add
 <ul>
-  <li>Typescript</li>
-  <li>babel</li>
+  <li>project scripts</li>
   <li>tslint</li>
   <li>swagger</li>
   <li>automated test cases</li>

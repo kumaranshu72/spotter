@@ -1,6 +1,9 @@
-import { Request, Response, Router } from 'express'
+import { Router } from 'express'
 
+import { validateParams } from '../../../middlewares'
+import { healthControllerV1 } from '../controllers'
 import { routeConst } from './constant'
+import paramSchema from './validationSchema'
 
 const router: Router = Router()
 const {
@@ -8,9 +11,6 @@ const {
 } = routeConst
 
 router.route(health)
-  .get((req: Request, res: Response) => {
-    console.log(req.hostname)
-    res.send('Hello world')
-  })
+  .get([validateParams(paramSchema.healthValidator)], healthControllerV1)
 
 export default router

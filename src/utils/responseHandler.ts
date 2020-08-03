@@ -1,4 +1,6 @@
 import { Response } from 'express'
+
+/* tslint:disable: no-any*/
 const self = {
   delegate: (res: Response) => (err: any, data: any, statusCode: number,
     statusMessage: string, logData: any) => self.sendResponse(err, data, res, statusCode, statusMessage, logData),

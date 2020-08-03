@@ -37,3 +37,6 @@ const self = {
 }
 
 export const responseHandler = self
+
+export type IresponseCallbck = (err: any, data: any, statusCode: number,
+  statusMessage: string, logData: any) => void

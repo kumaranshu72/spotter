@@ -17,7 +17,7 @@ Spotter is backend service for tiyaka.
 <ul>
   <li>swagger</li>
   <li>dockerlization</li>
-  <li>project scripts</li>
+  <li>health check</lt>
   <li>middlewares</li>
   <li>automated test cases</li>
 </ul>

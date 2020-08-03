@@ -1,13 +1,15 @@
 import { Request, Response, Router } from 'express'
 
+import health from '../components/health/routes'
 import { responseHandler } from '../utils'
+import { routeConstants } from './constant'
 
 const router: Router = Router()
+const {
+  HEALTH,
+} = routeConstants
 
-router.use('/health', (req: Request, res: Response) => {
-  global.ctx.log.info('hello world', req.hostname)
-  res.send('hi')
-})
+router.use(HEALTH, health)
 
 /*  404 handler Always @end */
 router.use((req: Request, res: Response) => {

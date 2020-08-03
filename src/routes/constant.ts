@@ -1,6 +1,6 @@
 export const routeConstants = {
   HEALTH: '',
-  SWAGGER_ROUTE: '',
+  SWAGGER_ROUTE: '/api-docs',
 }
 
 export const SWAGGER_OPTIONS = {

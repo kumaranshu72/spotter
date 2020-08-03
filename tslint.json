@@ -46,7 +46,8 @@
     "camelcase": [0],
     "no-unused-vars": [2, { "args": "none" }],
     "prefer-template": true,
-    "ordered-imports": true
+    "ordered-imports": true,
+    "trailing-comma": true
   },
   "rulesDirectory": []
 }

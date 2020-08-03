@@ -1,13 +1,19 @@
 import { Request, Response, Router } from 'express'
+import swaggerJsdoc from 'swagger-jsdoc'
+import swaggerUi from 'swagger-ui-express'
 
 import health from '../components/health/routes'
 import { responseHandler } from '../utils'
-import { routeConstants } from './constant'
+import { routeConstants, SWAGGER_OPTIONS } from './constant'
 
 const router: Router = Router()
 const {
   HEALTH,
+  SWAGGER_ROUTE,
 } = routeConstants
+const swaggerDocs = swaggerJsdoc(SWAGGER_OPTIONS)
+
+router.use(SWAGGER_ROUTE, swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 router.use(HEALTH, health)
 

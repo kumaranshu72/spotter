@@ -7,6 +7,6 @@ COPY package-lock.json /test
 RUN npm install
 COPY . /test
 
-CMD npm run migration && npm run test-with-coverage
+CMD npm run test-with-coverage
 
 EXPOSE 3000

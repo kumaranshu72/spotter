@@ -1,0 +1,39 @@
+version: '3'
+services:
+  app:
+    container_name: spotter_test
+    build:
+      context: .
+      dockerfile: ./Dockerfile/development/Dockerfile
+    ports:
+     - "3000:3000"
+    volumes:
+     - ./:/app
+     - /app/node_modules
+    restart: always
+    environment:
+      - HOSTNAME=localhost:3000
+    links:
+      - mongo
+      - redis
+    depends_on:
+      - mongo
+      - redis
+  mongo:
+    container_name: mongo_test
+    image: mongo:4
+    command: [--auth]
+    environment:
+      # provide your credentials here
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - "27018:27017"
+    restart: always
+  redis:
+    image: redis
+    container_name: redis_test
+    ports:
+      - "6397:6397"

@@ -1,11 +1,11 @@
 import * as bodyParser from 'body-parser'
-import express, { Application } from 'express'
-import morgan from 'morgan'
 import cors from 'cors'
+import express, { Application } from 'express'
 import helmet from 'helmet'
+import morgan from 'morgan'
 
-import router from './routes'
 import { logger, LoggerStream } from './config'
+import router from './routes'
 
 class App {
   public app: Application

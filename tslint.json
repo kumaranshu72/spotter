@@ -45,7 +45,8 @@
     "max-len": [2, 120, { "ignoreTemplateLiterals": true  }],
     "camelcase": [0],
     "no-unused-vars": [2, { "args": "none" }],
-    "prefer-template": true
+    "prefer-template": true,
+    "ordered-imports": true
   },
   "rulesDirectory": []
 }

@@ -1,7 +1,8 @@
+import { Response } from 'express'
 const self = {
-  delegate: res => (err, data, statusCode,
-    statusMessage, logData) => self.sendResponse(err, data, res, statusCode, statusMessage, logData),
-  sendResponse: (err, respData, res, statusCode, statusMessage, logData) => {
+  delegate: (res: Response) => (err: any, data: any, statusCode: number,
+    statusMessage: string, logData: any) => self.sendResponse(err, data, res, statusCode, statusMessage, logData),
+  sendResponse: (err: Error, respData: any, res: Response, statusCode: number, statusMessage: string, logData: any) => {
     if (err)	{
       self.sendError(err, respData, res, statusCode, statusMessage, logData)
     }
@@ -9,18 +10,19 @@ const self = {
       self.sendSuccess(respData, res, statusCode, statusMessage, logData)
     }
   },
-  sendError: (err, errorTrace, res, statusCode, statusMessage, logData) => {
+  sendError: (err: any, errorTrace: any, res: Response, statusCode: number, statusMessage: string, logData: any) => {
     console.log(logData)
+    console.log(errorTrace)
     global.ctx.log.error(logData)
 
-    delete err.statusCode
+    // delete err.statusCode
     res.status(statusCode).json({
       statusCode,
       statusMessage,
       data: err,
     })
   },
-  sendSuccess: (data, res, statusCode, statusMessage, logData) => {
+  sendSuccess: (data: any, res: Response, statusCode: number, statusMessage: string, logData: any) => {
     console.log(logData)
     global.ctx.log.info(logData)
 

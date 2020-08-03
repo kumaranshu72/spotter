@@ -1,15 +1,15 @@
-import { Router } from 'express'
+import { Router, Request, Response } from 'express'
 import { responseHandler } from '../utils'
 
 const router: Router = Router()
 
-router.use('/health', (req, res) => {
-  global.ctx.log.info('hello world')
+router.use('/health', (req: Request, res: Response) => {
+  global.ctx.log.info('hello world', req.hostname)
   res.send('hi')
 })
 
 /*  404 handler Always @end */
-router.use((req, res) => {
+router.use((req: Request, res: Response) => {
   const logObj = {
     reqHeaders: req.headers,
     reqBody: req.body,

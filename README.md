@@ -12,7 +12,7 @@ Spotter is backend service for tiyaka.
   <code>
     npm config set save-exact=true
   </code>
-  <li>Install `docker` and `docker-compose`</li>
+  <li>Install `docker` and `docker-compose` </li>
 </ul>
 
 # setup project

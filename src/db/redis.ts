@@ -46,11 +46,10 @@ class Redis {
 
     private checkConnectionStatus = () => {
         this.connection.on('connect', () => {
-            console.log(`Redis server is connected on port ${this.options.port}.`)
+            global.ctx.log.info(`Redis server is connected on port ${this.options.port}.`)
         })
-        this.connection.on('error', err => {
-            console.log('Error occurs while connection to redis server.')
-            console.log(err)
+        this.connection.on('error', () => {
+            global.ctx.log.info('Error occurs while connection to redis server.')
         })
     }
 }

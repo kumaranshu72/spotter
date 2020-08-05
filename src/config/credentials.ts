@@ -1,12 +1,10 @@
+import env from '../config/env/environment'
+
 export const mongoConfig = {
-  mongoUrl:
-    process.env.MONGO_URL ||
-    'mongodb://root:root@mongo/spotter?authSource=admin',
+  mongoUrl: env.mongo.mongoUrl,
 }
 
-const getCustomRedisPort = () => process.env.REDIS_PORT || ''
-
 export const redisConfig = {
-  redisPort: parseInt(getCustomRedisPort(), 10) || 6379,
-  redisUrl: process.env.REDIS_URL || 'redis',
+  redisPort: env.redis.redisPort,
+  redisUrl: env.redis.redisUrl,
 }

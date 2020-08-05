@@ -24,7 +24,7 @@ jobs:
                   ls -a
           - run: |
               git clone https://gist.github.com/${{ secrets.CONFIG_URI_ID }}.git
-              mv ${{ secrets.CONFIG_URI_ID }}/config.ts ./src/config/env/
+              mv ${{ secrets.CONFIG_URI_ID }}/config.ts ./src/config/env/environment.ts
               rm -rf ${{ secrets.CONFIG_URI_ID }}
               ls -a ./src/config/env/
           - run: |

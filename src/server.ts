@@ -4,4 +4,5 @@ const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
     global.ctx.log.info(`Magic Happens on port ${PORT}`)
+    console.log(`Magic Happens on port ${PORT}`)
 })

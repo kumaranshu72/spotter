@@ -1,0 +1,38 @@
+# This is a basic workflow to help you get started with Actions
+name: CI
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+---
+- name: Remove git.ignore
+                run: |
+                    rm .gitignore
+                    ls -a
+- name: Pull config.js
+                run: |
+                    git clone https://gist.github.com/${{ secrets.CONFIG_URI_ID }}.git
+                    mv ${{ secrets.CONFIG_URI_ID }}/config.js ./src/config/env/
+                    rm -rf ${{ secrets.CONFIG_URI_ID }}
+                    ls -a
+- name: Commit changes
+                run: |
+                    git config --global user.name kumaranshu72
+                    git config --global user.email kumaranshu72@gmail.com
+                    git add .
+                    git commit -m "Add Config file"
+- uses: akhileshns/heroku-deploy@v3.3.6 # This is the action
+                with:
+                    heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+                    heroku_app_name: spotter-072
+                    heroku_email: kumaranshu72@gmail.com
+                env:
+                    NODE_ENV: test

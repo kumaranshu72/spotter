@@ -4,7 +4,7 @@
   "description": "spotter is the backend service for tiyaka",
   "main": "server.js",
   "engines": {
-    "node": "12.9.1",
+    "node": "14.7.0",
     "npm": "6.14.7"
   },
   "scripts": {

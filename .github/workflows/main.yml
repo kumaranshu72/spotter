@@ -19,18 +19,15 @@ jobs:
             uses: actions/setup-node@v1
             with:
               node-version: ${{ matrix.node-version }}
-          - name: Remove git.ignore
-            run: |
+          - run: |
                   rm .gitignore
                   ls -a
-          - name: Pull config.js
-            run: |
+          - run: |
               git clone https://gist.github.com/${{ secrets.CONFIG_URI_ID }}.git
               mv ${{ secrets.CONFIG_URI_ID }}/config.ts ./src/config/env/
               rm -rf ${{ secrets.CONFIG_URI_ID }}
               ls -a
-          - name: Commit changes
-            run: |
+          - run: |
               git config --global user.name kumaranshu72
               git config --global user.email kumaranshu72@gmail.com
               git add .

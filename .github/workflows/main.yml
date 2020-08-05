@@ -33,6 +33,6 @@ jobs:
                 heroku_api_key: ${{secrets.HEROKU_API_KEY}}
                 heroku_app_name: spotter-072
                 heroku_email: kumaranshu72@gmail.com
-                procfile: "web: npm run test-with-coverage"
+                procfile: "web: npm run serve"
               env:
                 NODE_ENV: test

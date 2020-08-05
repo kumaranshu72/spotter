@@ -26,7 +26,7 @@ jobs:
               git clone https://gist.github.com/${{ secrets.CONFIG_URI_ID }}.git
               mv ${{ secrets.CONFIG_URI_ID }}/config.ts ./src/config/env/
               rm -rf ${{ secrets.CONFIG_URI_ID }}
-              ls -a
+              ls -a ./src/config/env/
           - run: |
               git config --global user.name kumaranshu72
               git config --global user.email kumaranshu72@gmail.com

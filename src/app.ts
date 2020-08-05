@@ -1,3 +1,4 @@
+import '@babel/polyfill'
 import * as bodyParser from 'body-parser'
 import cors from 'cors'
 import express, { Application } from 'express'
@@ -5,20 +6,22 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 
 import { logger, LoggerStream } from './config'
+import { createMongoConnection } from './db'
 import router from './routes'
 
 class App {
   public app: Application
 
   constructor() {
-      this.app = express()
-      this.config()
-      this.mountRoutes()
+    this.app = express()
+    this.config()
+    this.mountRoutes()
   }
 
   private config(): void {
     // DB connection
     // connect(mongoConfig.mongoUrl, {useNewUrlParser: true, useCreateIndex: true})
+    createMongoConnection()
     // enabling cors
     this.app.use(cors())
     // support application/json type post data

@@ -6,7 +6,7 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 
 import { logger, LoggerStream } from './config'
-import { createDBConnection } from './db'
+import { createMongoConnection } from './db'
 import router from './routes'
 
 class App {
@@ -21,7 +21,7 @@ class App {
   private config(): void {
     // DB connection
     // connect(mongoConfig.mongoUrl, {useNewUrlParser: true, useCreateIndex: true})
-    this.connectDB()
+    createMongoConnection()
     // enabling cors
     this.app.use(cors())
     // support application/json type post data
@@ -40,15 +40,6 @@ class App {
 
   private mountRoutes(): void {
     this.app.use(router)
-  }
-
-  private async connectDB() {
-    try {
-      await createDBConnection()
-      global.ctx.log.info('Mongo Database has been connected')
-    } catch (err) {
-      global.ctx.log.info('Error while connecting to mongo database')
-    }
   }
 }
 

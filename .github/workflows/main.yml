@@ -19,7 +19,7 @@ jobs:
             - name: Pull config.js
               run: |
                 git clone https://gist.github.com/${{ secrets.CONFIG_URI_ID }}.git
-                mv ${{ secrets.CONFIG_URI_ID }}/config.js ./src/config/env/
+                mv ${{ secrets.CONFIG_URI_ID }}/config.ts ./src/config/env/
                 rm -rf ${{ secrets.CONFIG_URI_ID }}
                 ls -a
             - name: Commit changes

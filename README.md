@@ -17,10 +17,3 @@ Spotter is backend service for tiyaka.
 
 # setup project
 To start the project use `docker-compose -f docker-compose.yml up --build`
-
-# Things to add
-<ul>
-  <li>automated test cases</li>
-  <li>mongo connection</li>
-  <li>redis connection</li>
-</ul>

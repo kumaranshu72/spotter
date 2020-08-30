@@ -1,24 +1,21 @@
 import { Schema } from 'mongoose'
 
-const validateEmail = (email: string) => {
-    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    return re.test(email)
-}
+import { validateEmail } from '../utils'
 
 export const UserSchema: Schema = new Schema({
     customer_key: {
         type: String,
-        required: [true, `customer_key is missing.`],
+        required: [true, 'customer_key is missing.'],
         unique: true
     },
     phone: {
         type: String,
         unique: true,
-        required: [true, `No phone number given.`]
+        required: [true, 'No phone number given.']
     },
     gender: {
         type: String,
-        required: [true, `No gender is given`]
+        required: [true, 'No gender is given']
     },
     orientation: {
         type: String
@@ -26,7 +23,7 @@ export const UserSchema: Schema = new Schema({
     location: {
         type: {
             type: String,
-            default: `Point`
+            default: 'Point'
         },
         coordinates: [Number]
     },
@@ -35,12 +32,12 @@ export const UserSchema: Schema = new Schema({
         default: 0
     },
     user_name: {
-        required: [true, `User name can't be empty`],
+        required: [true, 'User name can\'t be empty'],
         type: String,
         trim: true,
     },
     blocked_list: [
-        Number
+        String
     ],
     profile_info: {
         about: {
@@ -72,22 +69,17 @@ export const UserSchema: Schema = new Schema({
     },
     email: {
         required: true,
-        unique: [true, `Email already exists.`],
+        unique: [true, 'Email already exists.'],
         type: String,
         trim: true,
         lowercase: true,
-        validate: [validateEmail, `Email is not valid.`],
+        validate: [validateEmail, 'Email is not valid.'],
     },
     password: {
         required: true,
         type: String,
         trim: true,
         minlength: 8
-    },
-    tokens: {
-        refresh_token: {
-            type: String
-        }
     },
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } })
 

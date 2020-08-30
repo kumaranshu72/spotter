@@ -9,7 +9,7 @@ export interface IUser {
     },
     is_active: boolean,
     user_name: string,
-    blocked_list: [number],
+    blocked_list: [string],
     profile_info: {
         about: string,
         job_title: string,
@@ -25,9 +25,6 @@ export interface IUser {
     },
     email: string,
     password: string,
-    tokens: {
-        refresh_token: string
-    },
     created_at: Date,
     updated_at: Date
 }

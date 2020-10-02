@@ -1,5 +1,5 @@
 # Spotter
-Spotter is backend service for tiyaka.
+Spotter are the backend service for tiyaka.
 
 
 # Pre Setup Instruction

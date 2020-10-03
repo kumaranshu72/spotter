@@ -30,10 +30,10 @@ services:
     volumes:
       - ./data/db:/data/db
     ports:
-      - "27018:27017"
+      - "27017:27017"
     restart: always
   redis:
     image: redis
     container_name: redis
     ports:
-      - "6397:6397"
+      - "6379:6379"

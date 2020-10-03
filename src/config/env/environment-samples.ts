@@ -4,10 +4,10 @@ const config: any = {
   dev: {
     redis: {
       redisPort: 6379,
-      redisUrl: 'localhost'
+      redisUrl: 'redis'
     },
     mongo: {
-      mongoUrl: 'mongodb://root:root@localhost/spotter?authSource=admin'
+      mongoUrl: 'mongodb://root:root@mongo/spotter?authSource=admin'
     }
   },
   prod: {
